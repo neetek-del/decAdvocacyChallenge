@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Table&nbsp;1: Overview of the productivity data
 </figcaption>
 <div aria-describedby="tbl-data-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="74">
+<div class="cell-output cell-output-display" data-execution_count="92">
 <div>
 
 
@@ -276,7 +276,7 @@ Table&nbsp;1: Overview of the productivity data
 Table&nbsp;2: Summary statistics by shop and boss presence
 </figcaption>
 <div aria-describedby="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div class="cell-output cell-output-display" data-execution_count="93">
 <div>
 
 
@@ -539,7 +539,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <section id="data-loading" class="level3">
 <h3 class="anchored" data-anchor-id="data-loading">Data Loading</h3>
 <p>The data file <code>carsFixed.csv</code> is included in your repository. Load it using pandas:</p>
-<div id="c8fba830" class="cell" data-execution_count="4">
+<div id="18b08f3a" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>carsDF <span class="op">=</span> pd.read_csv(<span class="st">"carsFixed.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -550,7 +550,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 </section>
 <section id="data-and-quick-checks" class="level2">
 <h2 class="anchored" data-anchor-id="data-and-quick-checks">Data and quick checks</h2>
-<div id="eea94142" class="cell" data-execution_count="5">
+<div id="ca65cb42" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 250 (should be 250)
 shopID
@@ -566,7 +566,7 @@ dtype: int64</code></pre>
 </section>
 <section id="what-the-data-shows" class="level1">
 <h1>WHAT THE DATA SHOWS</h1>
-<div id="3f678693" class="cell" data-execution_count="6">
+<div id="437bbff1" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -578,8 +578,8 @@ dtype: int64</code></pre>
 </section>
 <section id="simple-summary-by-shop-and-boss-presence" class="level1">
 <h1>Simple summary by shop and boss presence</h1>
-<div id="64eca6e3" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="79">
+<div id="1769f33c" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="97">
 <div>
 
 
@@ -685,8 +685,8 @@ dtype: int64</code></pre>
 <section id="which-shops-benefit-from-patrick-being-present" class="level1">
 <h1>Which shops benefit from Patrick being present?</h1>
 <p>We do a straightforward comparison: for each shop, compare the mean carsFixed on days the boss was present vs absent. To avoid overclaiming from small samples, we use a bootstrap to estimate a 95% interval for the difference in means (boss present minus boss absent).</p>
-<div id="91e48140" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display" data-execution_count="80">
+<div id="852ec599" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="98">
 <div>
 
 
@@ -760,7 +760,7 @@ dtype: int64</code></pre>
 </section>
 <section id="visual-mean-ci-of-boss-effect-by-shop---shows-the-estimated-boss-effect-by-shop-with-a-95-confidence-interval" class="level1">
 <h1>Visual: mean ± CI of boss effect by shop - shows the estimated boss effect by shop with a 95% confidence interval</h1>
-<div id="958b72db" class="cell" data-execution_count="9">
+<div id="d7b072ff" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -775,8 +775,8 @@ dtype: int64</code></pre>
 </section>
 <section id="how-much-money-is-at-stake-simple-revenue-simulation" class="level1">
 <h1>How much money is at stake? (simple revenue simulation)</h1>
-<div id="e1428529" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="82">
+<div id="6645d069" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="100">
 <div>
 
 
@@ -850,8 +850,8 @@ dtype: int64</code></pre>
 </section>
 <section id="scenario-definitions-1" class="level1">
 <h1>scenario definitions</h1>
-<div id="028ec4a7" class="cell" data-execution_count="17">
-<div class="cell-output cell-output-display" data-execution_count="89">
+<div id="04839d92" class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="107">
 <pre><code>{'Always visit Shop 2': np.float64(2938250.0000000116),
  'Rotate evenly 1-5': np.float64(3451683.3333333316),
  'Visit best-uplift shop every day': np.float64(4544249.999999969)}</code></pre>
@@ -860,8 +860,8 @@ dtype: int64</code></pre>
 </section>
 <section id="compute-revenues" class="level1">
 <h1>compute revenues</h1>
-<div id="c13f1313" class="cell" data-execution_count="18">
-<div class="cell-output cell-output-display" data-execution_count="90">
+<div id="5d8be520" class="cell" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="108">
 <pre><code>{'Always visit Shop 2': np.float64(2938250.0000000116),
  'Rotate evenly 1-5': np.float64(3451683.3333333316),
  'Visit best-uplift shop every day': np.float64(4544249.999999969)}</code></pre>

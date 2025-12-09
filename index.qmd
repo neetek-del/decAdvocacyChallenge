@@ -341,18 +341,6 @@ days = 365
 uplift = (means[1] - means[0]).sort_values(ascending=False)
 
 
-# scenario functions
-```{python}
-#| echo: false
-def simulate_schedule(schedule_func):
-    total_cars = 0
-    for day in range(days):
-        shop_today = schedule_func(day)
-        boss_here = 1
-        total_cars += means.loc[shop_today,1]
-    return total_cars
-```
-
 
 ```{python}
 #| echo: false
@@ -365,7 +353,19 @@ def simulate_schedule(schedule_func):
     return total_cars
 ```
 
-# scenario definitions
+
+```{python}
+#| echo: false
+def simulate_schedule(schedule_func):
+    total_cars = 0
+    for day in range(days):
+        shop_today = schedule_func(day)
+        boss_here = 1
+        total_cars += means.loc[shop_today,1]
+    return total_cars
+```
+
+
 ```{python}
 #| echo: false
 always_shop2 = lambda d: 2
@@ -381,7 +381,7 @@ days = 365
 uplift = (means[1] - means[0]).sort_values(ascending=False)
 ```
 
-# scenario functions
+
 ```{python}
 #| echo: false
 

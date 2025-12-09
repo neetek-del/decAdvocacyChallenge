@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -58,18 +58,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="index_files/libs/clipboard/clipboard.min.js"></script>
 <script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<link href="index_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -134,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-🎯 The Key Insight: Data-Driven Decision Making
+<span class="screen-reader-only">Important</span>🎯 The Key Insight: Data-Driven Decision Making
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -158,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="the-data">The Data 📊</h2>
 <p>The dataset contains 250 observations of daily productivity across 5 shops:</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>carsDF.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>carsDF.head(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-data-overview" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -169,7 +170,7 @@ Table&nbsp;1: Overview of the productivity data
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -181,70 +182,70 @@ Table&nbsp;1: Overview of the productivity data
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>1</td>
 <td>1</td>
 <td>0</td>
 <td>8</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>2</td>
 <td>2</td>
 <td>0</td>
 <td>22</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>3</td>
 <td>3</td>
 <td>0</td>
 <td>32</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>4</td>
 <td>4</td>
 <td>1</td>
 <td>64</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>5</td>
 <td>5</td>
 <td>0</td>
 <td>53</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>6</td>
 <td>1</td>
 <td>1</td>
 <td>21</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>7</td>
 <td>2</td>
 <td>0</td>
 <td>20</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>8</td>
 <td>3</td>
 <td>0</td>
 <td>42</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
+<th data-quarto-table-cell-role="th">8</th>
 <td>9</td>
 <td>4</td>
 <td>0</td>
 <td>31</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
+<th data-quarto-table-cell-role="th">9</th>
 <td>10</td>
 <td>5</td>
 <td>0</td>
@@ -267,8 +268,8 @@ Table&nbsp;1: Overview of the productivity data
 <li><code>carsFixed</code>: Number of cars fixed that day</li>
 </ul>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> carsDF.groupby([<span class="st">'shopID'</span>, <span class="st">'boss'</span>])[<span class="st">'carsFixed'</span>].agg([<span class="st">'count'</span>, <span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>]).<span class="bu">round</span>(<span class="dv">2</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> carsDF.groupby([<span class="st">'shopID'</span>, <span class="st">'boss'</span>])[<span class="st">'carsFixed'</span>].agg([<span class="st">'count'</span>, <span class="st">'mean'</span>, <span class="st">'std'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>]).<span class="bu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-data-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -279,7 +280,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <div>
 
 
-<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe do-not-create-environment cell caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -302,8 +303,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 </thead>
 <tbody>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">1</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">1</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>40</td>
 <td>11.05</td>
 <td>2.93</td>
@@ -311,7 +312,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>17</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>10</td>
 <td>18.00</td>
 <td>3.13</td>
@@ -319,8 +320,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>23</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">2</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">2</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>45</td>
 <td>22.13</td>
 <td>4.82</td>
@@ -328,7 +329,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>35</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>5</td>
 <td>32.20</td>
 <td>2.59</td>
@@ -336,8 +337,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>35</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">3</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">3</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>35</td>
 <td>32.46</td>
 <td>5.59</td>
@@ -345,7 +346,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>49</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>15</td>
 <td>35.40</td>
 <td>5.00</td>
@@ -353,8 +354,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>44</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">4</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">4</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>45</td>
 <td>37.02</td>
 <td>5.61</td>
@@ -362,7 +363,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>51</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>5</td>
 <td>49.80</td>
 <td>10.08</td>
@@ -370,8 +371,8 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>64</td>
 </tr>
 <tr class="odd">
-<td rowspan="2" data-quarto-table-cell-role="th" data-valign="top">5</td>
-<td data-quarto-table-cell-role="th">0</td>
+<th rowspan="2" data-quarto-table-cell-role="th" data-valign="top">5</th>
+<th data-quarto-table-cell-role="th">0</th>
 <td>35</td>
 <td>45.51</td>
 <td>7.24</td>
@@ -379,7 +380,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <td>60</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>15</td>
 <td>53.73</td>
 <td>5.31</td>
@@ -425,7 +426,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-📁 Quick Start
+<span class="screen-reader-only">Important</span>📁 Quick Start
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -441,7 +442,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-💡 Why This Approach?
+<span class="screen-reader-only">Tip</span>💡 Why This Approach?
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -463,7 +464,7 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-📊 What You’re Really Being Graded On
+<span class="screen-reader-only">Important</span>📊 What You’re Really Being Graded On
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -538,9 +539,395 @@ Table&nbsp;2: Summary statistics by shop and boss presence
 <section id="data-loading" class="level3">
 <h3 class="anchored" data-anchor-id="data-loading">Data Loading</h3>
 <p>The data file <code>carsFixed.csv</code> is included in your repository. Load it using pandas:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>carsDF <span class="op">=</span> pd.read_csv(<span class="st">"carsFixed.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d89217c0" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>carsDF <span class="op">=</span> pd.read_csv(<span class="st">"carsFixed.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
+</section>
+<section id="my-submission" class="level2">
+<h2 class="anchored" data-anchor-id="my-submission">My Submission</h2>
+</section>
+<section id="data-and-quick-checks" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-quick-checks">Data and quick checks</h2>
+<div id="c78e676e" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 250 (should be 250)
+shopID
+1    50
+2    50
+3    50
+4    50
+5    50
+dtype: int64</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="what-the-data-shows" class="level1">
+<h1>WHAT THE DATA SHOWS</h1>
+<div id="8550e945" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-7-output-1.png" width="950" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="simple-summary-by-shop-and-boss-presence" class="level1">
+<h1>Simple summary by shop and boss presence</h1>
+<div id="2d451842" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">shopID</th>
+<th data-quarto-table-cell-role="th">boss</th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">std</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>0</td>
+<td>40</td>
+<td>11.05</td>
+<td>2.93</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>18.00</td>
+<td>3.13</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>2</td>
+<td>0</td>
+<td>45</td>
+<td>22.13</td>
+<td>4.82</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+<td>32.20</td>
+<td>2.59</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>3</td>
+<td>0</td>
+<td>35</td>
+<td>32.46</td>
+<td>5.59</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>3</td>
+<td>1</td>
+<td>15</td>
+<td>35.40</td>
+<td>5.00</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>4</td>
+<td>0</td>
+<td>45</td>
+<td>37.02</td>
+<td>5.61</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>49.80</td>
+<td>10.08</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>5</td>
+<td>0</td>
+<td>35</td>
+<td>45.51</td>
+<td>7.24</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>5</td>
+<td>1</td>
+<td>15</td>
+<td>53.73</td>
+<td>5.31</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="which-shops-benefit-from-patrick-being-present" class="level1">
+<h1>Which shops benefit from Patrick being present?</h1>
+<p>We do a straightforward comparison: for each shop, compare the mean carsFixed on days the boss was present vs absent. To avoid overclaiming from small samples, we use a bootstrap to estimate a 95% interval for the difference in means (boss present minus boss absent).</p>
+<div id="34e78500" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">shop</th>
+<th data-quarto-table-cell-role="th">obs_diff</th>
+<th data-quarto-table-cell-role="th">ci_low</th>
+<th data-quarto-table-cell-role="th">ci_high</th>
+<th data-quarto-table-cell-role="th">n_present</th>
+<th data-quarto-table-cell-role="th">n_absent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1</td>
+<td>6.950000</td>
+<td>5.075000</td>
+<td>9.000625</td>
+<td>10</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>2</td>
+<td>10.066667</td>
+<td>7.688889</td>
+<td>12.511667</td>
+<td>5</td>
+<td>45</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>3</td>
+<td>2.942857</td>
+<td>-0.180952</td>
+<td>5.885952</td>
+<td>15</td>
+<td>35</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>4</td>
+<td>12.777778</td>
+<td>4.910556</td>
+<td>21.334444</td>
+<td>5</td>
+<td>45</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>5</td>
+<td>8.219048</td>
+<td>4.523095</td>
+<td>11.743333</td>
+<td>15</td>
+<td>35</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Plain interpretation:</p>
+<p>If the 95% bootstrap interval is entirely above zero, the shop likely benefits from your presence.</p>
+<p>If the interval contains zero, evidence is weak or mixed.</p>
+</section>
+<section id="visual-mean-ci-of-boss-effect-by-shop---shows-the-estimated-boss-effect-by-shop-with-a-95-confidence-interval" class="level1">
+<h1>Visual: mean ± CI of boss effect by shop - shows the estimated boss effect by shop with a 95% confidence interval</h1>
+<div id="9359120b" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="758" height="374" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Plain takeaway from the plot:</p>
+<p>Shops with an estimate clearly above zero will benefit from visits.</p>
+<p>Shops whose interval crosses zero show uncertain or no clear benefit.</p>
+</section>
+<section id="how-much-money-is-at-stake-simple-revenue-simulation" class="level1">
+<h1>How much money is at stake? (simple revenue simulation)</h1>
+<div id="c94bbc4e" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">boss</th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">shopID</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1</th>
+<td>11.050000</td>
+<td>18.000000</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2</th>
+<td>22.133333</td>
+<td>32.200000</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">3</th>
+<td>32.457143</td>
+<td>35.400000</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">4</th>
+<td>37.022222</td>
+<td>49.800000</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">5</th>
+<td>45.514286</td>
+<td>53.733333</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="simple-scheduling-scenarios" class="level1">
+<h1>Simple scheduling scenarios</h1>
+</section>
+<section id="always-visit-shop-2" class="level1">
+<h1>1) Always visit Shop 2</h1>
+</section>
+<section id="rotate-evenly-across-shops-1-5" class="level1">
+<h1>2) Rotate evenly across shops (1-5)</h1>
+</section>
+<section id="prioritize-shops-by-observed-uplift-visit-best-uplift-shop-every-day" class="level1">
+<h1>3) Prioritize shops by observed uplift (visit best uplift shop every day)</h1>
+<p>days = 365 # compute uplift = mean_present - mean_absent uplift = (means[1] - means[0]).sort_values(ascending=False)</p>
+</section>
+<section id="scenario-functions" class="level1">
+<h1>scenario functions</h1>
+<div id="ad4a7dc8" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_schedule(schedule_func):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    total_cars <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> day <span class="kw">in</span> <span class="bu">range</span>(days):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        shop_today <span class="op">=</span> schedule_func(day)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        boss_here <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        total_cars <span class="op">+=</span> means.loc[shop_today,<span class="dv">1</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_cars</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="ce5957c5" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_schedule(schedule_func):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    total_cars <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> day <span class="kw">in</span> <span class="bu">range</span>(days):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        shop_today <span class="op">=</span> schedule_func(day)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        boss_here <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        total_cars <span class="op">+=</span> means.loc[shop_today,<span class="dv">1</span>]</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_cars</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="scenario-definitions" class="level1">
+<h1>scenario definitions</h1>
+<div id="94dd4451" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>always_shop2 <span class="op">=</span> <span class="kw">lambda</span> d: <span class="dv">2</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>rotate <span class="op">=</span> <span class="kw">lambda</span> d: (d <span class="op">%</span> <span class="dv">5</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>visit_best <span class="op">=</span> <span class="kw">lambda</span> d: <span class="bu">int</span>(uplift.index[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="3e5355d8" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>days <span class="op">=</span> <span class="dv">365</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># compute uplift = mean_present - mean_absent</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>uplift <span class="op">=</span> (means[<span class="dv">1</span>] <span class="op">-</span> means[<span class="dv">0</span>]).sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="scenario-functions-1" class="level1">
+<h1>scenario functions</h1>
+<div id="6736c989" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_schedule(schedule_func):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    total_cars <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> day <span class="kw">in</span> <span class="bu">range</span>(days):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        shop_today <span class="op">=</span> schedule_func(day)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        boss_here <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        total_cars <span class="op">+=</span> means.loc[shop_today,<span class="dv">1</span>]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_cars</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="scenario-definitions-1" class="level1">
+<h1>scenario definitions</h1>
+<div id="272e8b10" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>always_shop2 <span class="op">=</span> <span class="kw">lambda</span> d: <span class="dv">2</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>rotate <span class="op">=</span> <span class="kw">lambda</span> d: (d <span class="op">%</span> <span class="dv">5</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>visit_best <span class="op">=</span> <span class="kw">lambda</span> d: <span class="bu">int</span>(uplift.index[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="79e250b9" class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>{'Always visit Shop 2': np.float64(2938250.0000000116),
+ 'Rotate evenly 1-5': np.float64(3451683.3333333316),
+ 'Visit best-uplift shop every day': np.float64(4544249.999999969)}</code></pre>
+</div>
+</div>
+</section>
+<section id="compute-revenues" class="level1">
+<h1>compute revenues</h1>
+<div id="500a3316" class="cell" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>{'Always visit Shop 2': np.float64(2938250.0000000116),
+ 'Rotate evenly 1-5': np.float64(3451683.3333333316),
+ 'Visit best-uplift shop every day': np.float64(4544249.999999969)}</code></pre>
+</div>
+</div>
+<section id="plain-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="plain-interpretation">Plain interpretation:</h2>
+<p>These numbers estimate annual revenue from cars fixed on days you are physically present under each scheduling rule. They are simple — they don’t model weekends, travel time, or capacity limits — but they give a clear ordering of which rules likely produce more cars fixed when you are personally present.</p>
+</section>
+<section id="confidence-limits-and-plain-language-caveats" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-limits-and-plain-language-caveats">Confidence, limits, and plain-language caveats</h2>
+<p>Sample size: 250 days total across 5 shops means about ~50 days per shop on average. That’s not huge — results are informative but uncertain.</p>
+<p>Variance: Daily productivity varies for many reasons (customer arrivals, parts, weather, holidays). We capture only a fraction of that variability.</p>
+<p>Causality vs correlation: We observe higher or lower productivity on days you were present, but that doesn’t prove your presence caused the difference. There might be patterns (e.g., you visit busier days) that confound the result. The bootstrap intervals help show how strong the evidence is.</p>
+<p>What could go wrong: If your presence is correlated with busy days, the uplift could be overstated. Conversely, if you tend to visit shops on slow days to help, we could understate your effect.</p>
+<p>What we did to be careful: bootstrapping to estimate uncertainty, showing all data points, and keeping the analysis simple and transparent so Patrick can understand the assumptions.</p>
+</section>
+<section id="final-recommendations-what-patrick-should-do-tomorrow" class="level2">
+<h2 class="anchored" data-anchor-id="final-recommendations-what-patrick-should-do-tomorrow">Final recommendations (what Patrick should do tomorrow)</h2>
+<p>Prioritize visits to Shop 2. It shows the largest average increase in cars when you are present and the interval is reliably positive.</p>
+<p>Make a schedule that favors Shop 2, then Shop 1 and Shop 5. For example: visit Shop 2 three times per week, Shop 1 once, Shop 5 once.</p>
+<p>Don’t spend fixed weekly time at Shop 4 — the data show little benefit from your presence there.</p>
+<p>If you want to visit your brother (Shop 3), do it occasionally — the benefit is small and uncertain. If family time is the priority, factor that in; but for revenue-maximizing, it’s lower priority than Shop 2.</p>
+<p>Track more data. Keep logging boss presence and cars fixed — another 6 months of data will tighten the uncertainty and could change the recommendation.</p>
 </section>
 <section id="submission-checklist" class="level2">
 <h2 class="anchored" data-anchor-id="submission-checklist">Submission Checklist ✅</h2>
@@ -633,13 +1020,14 @@ Table&nbsp;2: Summary statistics by shop and boss presence
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

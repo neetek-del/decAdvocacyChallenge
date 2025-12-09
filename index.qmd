@@ -205,10 +205,248 @@ Your report should answer these questions in a clear, concise way:
 
 The data file `carsFixed.csv` is included in your repository. Load it using pandas:
 
-```python
+```{python}
 import pandas as pd
 carsDF = pd.read_csv("carsFixed.csv")
 ```
+
+## My Submission
+
+
+## Data and quick checks
+```{python}
+#| echo: false
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+
+
+carsDF = pd.read_csv("carsFixed.csv")
+
+
+# Basic sanity checks
+print(f"Rows: {len(carsDF)} (should be 250)")
+print(carsDF.groupby(['shopID']).size())
+
+```
+
+
+# WHAT THE DATA SHOWS
+```{python}
+#| echo: false
+plt.figure(figsize=(10,5))
+# jitter the x positions so points don't fully overlap
+x = carsDF['shopID'].astype(int) + (carsDF['boss']*0.15 - 0.075) + np.random.normal(0, 0.03, size=len(carsDF))
+plt.scatter(x, carsDF['carsFixed'], alpha=0.65, s=30)
+plt.xticks([1,2,3,4,5])
+plt.xlabel('Shop ID')
+plt.ylabel('Cars fixed (per day)')
+plt.title('All 250 observations (jittered by boss presence)')
+# add legend-like notes
+plt.text(5.2, carsDF['carsFixed'].max()*0.95, 'boss present slightly to the right', fontsize=9)
+plt.tight_layout()
+plt.show()
+```
+
+# Simple summary by shop and boss presence
+```{python}
+#| echo: false
+summary = carsDF.groupby(['shopID','boss'])['carsFixed'].agg(['count','mean','std']).round(2).reset_index()
+summary
+```
+
+
+# Which shops benefit from Patrick being present?
+
+We do a straightforward comparison: for each shop, compare the mean carsFixed on days the boss was present vs absent. To avoid overclaiming from small samples, we use a bootstrap to estimate a 95% interval for the difference in means (boss present minus boss absent).
+
+
+```{python}
+#| echo: false
+rng = np.random.default_rng(123)
+boot_results = []
+for shop in sorted(carsDF['shopID'].unique()):
+    sub = carsDF[carsDF['shopID']==shop]
+    present = sub[sub['boss']==1]['carsFixed'].values
+    absent = sub[sub['boss']==0]['carsFixed'].values
+    # observed difference in means
+    obs_diff = present.mean() - absent.mean() if len(present)>0 and len(absent)>0 else np.nan
+    # bootstrap
+    diffs = []
+    for i in range(2000):
+        ps = rng.choice(present, size=len(present), replace=True) if len(present)>0 else np.array([])
+        as_ = rng.choice(absent, size=len(absent), replace=True) if len(absent)>0 else np.array([])
+        if len(ps) > 0 and len(as_) > 0:
+            diffs.append(ps.mean() - as_.mean())
+    if len(diffs) > 0:
+        lo, hi = np.percentile(diffs, [2.5, 97.5])
+    else:
+        lo, hi = np.nan, np.nan
+    boot_results.append({'shop':shop, 'obs_diff':obs_diff, 'ci_low':lo, 'ci_high':hi, 'n_present':len(present), 'n_absent':len(absent)})
+
+bootDF = pd.DataFrame(boot_results)
+bootDF
+```
+
+Plain interpretation:
+
+If the 95% bootstrap interval is entirely above zero, the shop likely benefits from your presence.
+
+If the interval contains zero, evidence is weak or mixed.
+
+
+# Visual: mean ± CI of boss effect by shop - shows the estimated boss effect by shop with a 95% confidence interval
+
+```{python}
+#| echo: false
+plt.figure(figsize=(8,4))
+plt.errorbar(bootDF['shop'], bootDF['obs_diff'], yerr=[bootDF['obs_diff']-bootDF['ci_low'], bootDF['ci_high']-bootDF['obs_diff']], fmt='o', capsize=5)
+plt.axhline(0, color='gray', linestyle='--')
+plt.xlabel('Shop ID')
+plt.ylabel('Mean change in cars when boss present (boss - absent)')
+plt.title('Estimated boss effect by shop (bootstrap 95% CI)')
+plt.xticks([1,2,3,4,5])
+plt.tight_layout()
+plt.show()
+```
+
+Plain takeaway from the plot:
+
+Shops with an estimate clearly above zero will benefit from visits.
+
+Shops whose interval crosses zero show uncertain or no clear benefit.
+
+# How much money is at stake? (simple revenue simulation)
+
+```{python}
+#| echo: false
+price_per_car = 250 # change if needed
+# compute observed mean cars by shop & boss
+means = carsDF.groupby(['shopID','boss'])['carsFixed'].mean().unstack()
+means = means.fillna(means.mean().mean())
+means
+```
+
+
+# Simple scheduling scenarios
+# 1) Always visit Shop 2
+# 2) Rotate evenly across shops (1-5)
+# 3) Prioritize shops by observed uplift (visit best uplift shop every day)
+
+
+days = 365
+# compute uplift = mean_present - mean_absent
+uplift = (means[1] - means[0]).sort_values(ascending=False)
+
+
+# scenario functions
+```{python}
+
+def simulate_schedule(schedule_func):
+    total_cars = 0
+    for day in range(days):
+        shop_today = schedule_func(day)
+        boss_here = 1
+        total_cars += means.loc[shop_today,1]
+    return total_cars
+```
+
+
+```{python}
+
+def simulate_schedule(schedule_func):
+    total_cars = 0
+    for day in range(days):
+        shop_today = schedule_func(day)
+        boss_here = 1
+        total_cars += means.loc[shop_today,1]
+    return total_cars
+```
+
+# scenario definitions
+```{python}
+always_shop2 = lambda d: 2
+rotate = lambda d: (d % 5) + 1
+visit_best = lambda d: int(uplift.index[0])
+```
+
+
+```{python}
+days = 365
+# compute uplift = mean_present - mean_absent
+uplift = (means[1] - means[0]).sort_values(ascending=False)
+```
+
+# scenario functions
+```{python}
+
+def simulate_schedule(schedule_func):
+    total_cars = 0
+    for day in range(days):
+        shop_today = schedule_func(day)
+        boss_here = 1
+        total_cars += means.loc[shop_today,1]
+    return total_cars
+```
+
+# scenario definitions
+```{python}
+always_shop2 = lambda d: 2
+rotate = lambda d: (d % 5) + 1
+visit_best = lambda d: int(uplift.index[0])
+```
+
+```{python}
+#| echo: false
+scenarios = {
+'Always visit Shop 2': simulate_schedule(always_shop2),
+'Rotate evenly 1-5': simulate_schedule(rotate),
+'Visit best-uplift shop every day': simulate_schedule(visit_best)
+}
+scenario_rev = {k: v*price_per_car for k,v in scenarios.items()}  
+scenario_rev   # revenue for each scenario
+```
+
+
+
+
+# compute revenues
+```{python}
+#| echo: false
+scenario_rev = {k: v*price_per_car for k,v in scenarios.items()}
+scenario_rev
+```
+
+## Plain interpretation:
+
+These numbers estimate annual revenue from cars fixed on days you are physically present under each scheduling rule. They are simple — they don't model weekends, travel time, or capacity limits — but they give a clear ordering of which rules likely produce more cars fixed when you are personally present.
+
+
+## Confidence, limits, and plain-language caveats
+
+Sample size: 250 days total across 5 shops means about ~50 days per shop on average. That's not huge — results are informative but uncertain.
+
+Variance: Daily productivity varies for many reasons (customer arrivals, parts, weather, holidays). We capture only a fraction of that variability.
+
+Causality vs correlation: We observe higher or lower productivity on days you were present, but that doesn’t prove your presence caused the difference. There might be patterns (e.g., you visit busier days) that confound the result. The bootstrap intervals help show how strong the evidence is.
+
+What could go wrong: If your presence is correlated with busy days, the uplift could be overstated. Conversely, if you tend to visit shops on slow days to help, we could understate your effect.
+
+What we did to be careful: bootstrapping to estimate uncertainty, showing all data points, and keeping the analysis simple and transparent so Patrick can understand the assumptions.
+
+## Final recommendations (what Patrick should do tomorrow)
+
+Prioritize visits to Shop 2. It shows the largest average increase in cars when you are present and the interval is reliably positive.
+
+Make a schedule that favors Shop 2, then Shop 1 and Shop 5. For example: visit Shop 2 three times per week, Shop 1 once, Shop 5 once.
+
+Don’t spend fixed weekly time at Shop 4 — the data show little benefit from your presence there.
+
+If you want to visit your brother (Shop 3), do it occasionally — the benefit is small and uncertain. If family time is the priority, factor that in; but for revenue-maximizing, it’s lower priority than Shop 2.
+
+Track more data. Keep logging boss presence and cars fixed — another 6 months of data will tighten the uncertainty and could change the recommendation.
 
 ## Submission Checklist ✅
 

@@ -343,7 +343,7 @@ uplift = (means[1] - means[0]).sort_values(ascending=False)
 
 # scenario functions
 ```{python}
-
+#| echo: false
 def simulate_schedule(schedule_func):
     total_cars = 0
     for day in range(days):
@@ -355,7 +355,7 @@ def simulate_schedule(schedule_func):
 
 
 ```{python}
-
+#| echo: false
 def simulate_schedule(schedule_func):
     total_cars = 0
     for day in range(days):
@@ -367,6 +367,7 @@ def simulate_schedule(schedule_func):
 
 # scenario definitions
 ```{python}
+#| echo: false
 always_shop2 = lambda d: 2
 rotate = lambda d: (d % 5) + 1
 visit_best = lambda d: int(uplift.index[0])
@@ -374,6 +375,7 @@ visit_best = lambda d: int(uplift.index[0])
 
 
 ```{python}
+#| echo: false
 days = 365
 # compute uplift = mean_present - mean_absent
 uplift = (means[1] - means[0]).sort_values(ascending=False)
@@ -381,6 +383,7 @@ uplift = (means[1] - means[0]).sort_values(ascending=False)
 
 # scenario functions
 ```{python}
+#| echo: false
 
 def simulate_schedule(schedule_func):
     total_cars = 0
@@ -393,6 +396,7 @@ def simulate_schedule(schedule_func):
 
 # scenario definitions
 ```{python}
+#| echo: false
 always_shop2 = lambda d: 2
 rotate = lambda d: (d % 5) + 1
 visit_best = lambda d: int(uplift.index[0])
